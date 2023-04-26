@@ -1,0 +1,237 @@
+<%- include('../partials/headerAdm.ejs'); %>
+
+
+
+
+  
+<div class="container">
+  <div class="container">
+    <h1>Buscar productos</h1>
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control" id="search-bar" placeholder="Buscar...">
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="search-type-switch">
+            <label class="form-check-label" for="search-type-switch">Buscar por código de barras</label>
+          </div>
+          <button type="submit" class="btn btn-primary mt-3" id="search-button">Buscar</button>
+        </form>
+        <p id="alerP" class="bg-warning border border-danger lead d-none">
+          Ingrese nuevamente el codigo
+        </p>
+      </div>
+    </div>
+    <div class="row mt-3" id="search-results"></div>
+  </div>
+  
+  <!-- Plantilla de tarjeta de Bootstrap -->
+  <template id="card-template">
+    <div class="col-12 col-md-4 mb-3">
+      <div class="card">
+
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+          <p class="card-precio"></p>
+
+          <a href="" class="btn btn-outline-success btnCambiarPrecio">Cambiar precio</a>
+        </div>
+      </div>
+    </div>
+  </template>
+  
+  <!-- <h3 class="text-center" > Buscar productos dentro del sistema</h3>
+  <div class="buscar-producto row justify-content-around"> 
+    <div class="col-12 col-lg-6 mb-3">
+      <form class="" id="formSearch" >
+        <label for="inputBuscar">ESCANEAR CODIGO</label>
+        <input  class="" type="number" id="inputBuscar" name="buscar" autofocus  required>
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+    </form> 
+
+    <p id="alerP" class="bg-warning border border-danger lead d-none">
+      Ingrese nuevamente el codigo
+    </p>
+  </div>   -->
+  
+    <!-- <div class="col-12 col-lg-6 mb-3">
+      <form class="" id="buscarPorCodigoForm" >
+        <label  class="" for="inputCodigo">Por Codigo</label>
+        <input class=""   type="text" id="inputCodigo" name="buscar"  autofocus required>
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+      </form> 
+    </div>  -->
+   
+  </div> 
+
+      <!-- <form class="col-6" id="formSearchCodigo" >
+        <label for="buscarcodigo">Introduzca el codigo de barra</label>
+        <input  type="number" id="buscarcodigo" name="buscarcodigo"  required>
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+    </form>  -->
+<!-- 
+    <div class="container">
+      <h1>Buscar Productos</h1>
+      <div class="form-group">
+        <label for="inputSearch">Buscar:</label> -->
+        <!-- <input type="text" id="inputSearch" class="form-control" placeholder="Ingrese nombre del producto"> -->
+  
+      <!-- </div>
+      <div id="divResultados" class="row"></div>
+
+<div class="divProductoElegida"></div> -->
+<!-- 
+<p class="lead">BUSCADOR NUEVO</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <input type="text" class="form-control" id="searchInput" placeholder="Search...">
+      <div class="list-group" id="searchResults"></div>
+    </div>
+    <div class="col-md-4">
+      <div id="productCard"></div>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+  <h2>Debajo se mostrara el producto si se encontro alguna coincidencia </h2>
+ <div class="row">
+     <div class="col-10">
+      <table class="table">
+          <thead>
+            <tr>
+  
+    
+              <th scope="col">Nombre</th>
+              <th scope="col">Precio Minorista</th>
+
+              <th scope="col">Marca</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Acciones</th>
+
+    
+    
+            </tr>
+          </thead>
+          <tbody class="tableBody">
+            
+           
+      
+            
+               
+    
+    
+    
+    
+    
+          </tbody>
+        </table>
+     </div>
+     <div class="col-4">
+          <div class="row">
+              <div class="col-12"></div>
+              <div class="col-12"></div>
+              <div class="col-12"></div>
+              <div class="col-12"></div>
+          </div>
+     </div>
+ </div> -->
+
+  <!-- <form action="">
+  
+  
+      <button type="submit"></button>
+  </form> -->
+
+<!-- 
+
+  <div id="container-caja-cobro" class="container d-none d-print-none">
+
+  <div class="filaA row mt-4">
+    <div class="col-md-8 columI">
+
+      <div class="row">
+      <form id="cajaCobroForm" class="d-flex justify-content-around">
+
+        <input class="inputBuscar" id="textBuscar" type="text" placeholder="Buscar producto por código">
+        <input id="sbBuscar" type="submit" class="btnBuscar" value="Buscar">				</form>	
+      <div class="filaB row">
+
+
+        <table class="table table-striped mt-4 mb-4">
+          <tr>
+            <th class="thNombre">Nombre</th>
+            <th>Precio unitario</th>
+            <th>Marcas</th>
+            <th>Cantidad</th>
+            <th><b>Subtotal</b></th>
+          </tr>
+
+          <tbody id="tablaCajaCobro">
+
+
+          </tbody>
+
+        
+
+        </table>
+        <div class="boxPrecioContainer">
+        <div class="boxPrecio"><p id="total">Total: $</p></div>
+        </div>
+      </div> 
+      </div>
+        <div class="btnContainer mt-4">
+          <div id="imprimirTicketC" class="btnFunc">Imprimir Ticket-C</div>
+          <div id="cancelarCompra" class="btnFunc">Cancelar Compra</div>
+          <div id="cambiarPrecio" class="btnFunc">Cambiar Precio</div>
+          <div id="imprimirTicketA" class="btnFunc">Imprimir Ticket-A</div>
+          <div id="eliminarProductos" class="btnFunc">Eliminar Producto</div>
+          <div id="agregarProducto" class="btnFunc">Agregar prod. a la lista</div>
+        </div>				
+    </div>
+    <div class="col-md-4 columD">
+    <div class="row d-none filaDSup">
+      <div class="emptyBtn"></div>
+      <div class="emptyBtn"></div>
+      <div class="emptyBtn"></div>
+      <div class="emptyBtn"></div>
+      <div class="emptyBtn"></div>
+      </div>
+
+<div class="row filaDInf">
+      <p class="subt">Dinero ingresado</p>
+      <div class="boxDinero">
+        <label>$</label><input id="dineroIngresado" type="number">
+      </div>
+
+      <p class="subt">Vuelto</p>
+
+      <div class="boxDinero">
+        <p id="vuelto">0.00</p>
+      </div>
+    </div>
+
+    </div>
+
+      </div>
+-->
+
+<!-- </div>     
+  
+
+
+
+</div> -->
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script  src="/app.js"></script>
+  <script src="/sbar.js"></script>
+
+  <%- include('../partials/footer.ejs'); %>
