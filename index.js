@@ -156,5 +156,5 @@ app.use(function (err, req, res, next) {
 }); 
 
 // endapp
-app.listen(port, () => console.log(`Isidorito v.0.1 ${port}!`))
+app.listen(port, () => console.log(`ESCOSOSA v.0.1 ${port}!`))
 
