@@ -43,7 +43,7 @@ const saveVentasRoutes = require('./routes/savesDeCaja')
 
 
 
-const dbUrl = 'mongodb://localhost:27017/dbIsidorito';
+const dbUrl = 'mongodb://localhost:27017/escodb';
 main().catch(err => console.log(err));
 
 async function main() {
